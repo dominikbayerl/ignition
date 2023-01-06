@@ -34,6 +34,7 @@ import (
 	"github.com/coreos/ignition/v2/internal/providers/noop"
 	"github.com/coreos/ignition/v2/internal/providers/nutanix"
 	"github.com/coreos/ignition/v2/internal/providers/openstack"
+	"github.com/coreos/ignition/v2/internal/providers/oraclecloud"
 	"github.com/coreos/ignition/v2/internal/providers/packet"
 	"github.com/coreos/ignition/v2/internal/providers/powervs"
 	"github.com/coreos/ignition/v2/internal/providers/qemu"
@@ -171,6 +172,10 @@ func init() {
 	configs.Register(Config{
 		name:  "openstack",
 		fetch: openstack.FetchConfig,
+	})
+	configs.Register(Config{
+		name:  "oraclecloud",
+		fetch: oraclecloud.FetchConfig,
 	})
 	configs.Register(Config{
 		name:   "packet",
